@@ -4,63 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Red Spartan Graduate Tracer</title>
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+=======
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+>>>>>>> d3596e2 (`Updated index.html to remove custom styles and replace with external stylesheet and font imports`)
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Spartan Graduate Tracer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="page">
-
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-logo">
-      <!-- Spartan helmet SVG -->
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="32" cy="32" r="30" fill="#7b1a1a"/>
-        <path d="M32 10 C22 10 16 18 16 26 C16 34 20 40 28 44 L28 54 L36 54 L36 44 C44 40 48 34 48 26 C48 18 42 10 32 10Z" fill="#fff"/>
-        <rect x="26" y="44" width="12" height="4" rx="2" fill="#bbb"/>
-        <ellipse cx="32" cy="22" rx="7" ry="5" fill="#d0a0a0"/>
-        <rect x="20" y="14" width="24" height="6" rx="4" fill="#c0c0c0"/>
-        <rect x="28" y="10" width="8" height="8" rx="2" fill="#aaa"/>
+  <header class="header">
+    <div class="header-logo" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img">
+        <circle cx="32" cy="32" r="30" fill="currentColor"></circle>
+        <path d="M47 16c-18-1-29 8-29 22v11c4-4 9-7 15-8 4-.7 9 .2 14 3-2-4-6-7-11-8-5-1-9 0-13 2 1-11 9-17 24-17v-5Z" fill="#fff"></path>
+        <path d="M39 24c-10 1-15 6-15 15v7c2-5 6-8 12-10 3-1 6-1 10 1-2-3-5-5-9-6-3-.7-6-.4-9 1 2-4 5-6 11-7v-1Z" fill="#fff"></path>
+        <path d="M21 49h11c-2 4-5 7-10 9l-1-9Z" fill="#fff"></path>
       </svg>
     </div>
-    <div class="header-title">Red Spartan Graduate Tracer</div>
-  </div>
+    <h1>Red Spartan Graduate Tracer</h1>
+  </header>
 
-  <!-- COLUMN LABELS -->
-  <div class="col-labels">
-    <span class="col-label">Modules</span>
-    <span class="label-spacer"></span>
-    <span class="col-label sub">Submodules / Reports</span>
-    <span class="label-end-spacer"></span>
-  </div>
+  <section class="role-panel" aria-label="Role selection">
+    <div>
+      <p class="eyebrow">Reporting view</p>
+      <h2 id="roleTitle">Admin Module Access</h2>
+    </div>
+    <div class="role-buttons" role="tablist" aria-label="Select role">
+      <button class="role-button active" type="button" data-role="admin" role="tab" aria-selected="true">Admin</button>
+      <button class="role-button" type="button" data-role="programChair" role="tab" aria-selected="false">Program Chair</button>
+      <button class="role-button" type="button" data-role="externalAffairs" role="tab" aria-selected="false">External Affairs</button>
+      <button class="role-button" type="button" data-role="vcaa" role="tab" aria-selected="false">VCAA</button>
+    </div>
+  </section>
 
-  <!-- BODY -->
-  <div class="body">
+  <section class="column-labels" aria-hidden="true">
+    <span>Modules</span>
+    <span id="submoduleLabel">Submodules / Reports</span>
+  </section>
 
-    <!-- ===== DASHBOARD ===== -->
-    <div class="module-row">
-      <div class="module-arrow"><div class="arrow-line"></div></div>
-      <div class="module-box mod-dashboard">
-        <div class="mod-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        Dashboard
-      </div>
-      <div class="module-connector c-blue"><div class="connector-line"></div></div>
-      <div class="submodule-box sub-blue">
-        <div class="sub-grid four align-center">
-          <div class="dot-list">
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#1a3a6b" stroke-width="2"/><path d="M12 2 A10 10 0 0 1 22 12 L12 12Z" fill="#1a3a6b" stroke="none"/></svg>
-              All
-            </li>
-          </div>
-          <div class="dot-list">
-            <li>
-              <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M22 10v10H2V10l10-8 10 8z" stroke="#1a3a6b" stroke-width="2" stroke-linejoin="round"/><rect x="9" y="14" width="6" height="6" rx="1" stroke="#1a3a6b" stroke-width="1.5"/></svg>
-              Bachelor's Degree
+  <main class="map" id="moduleMap" aria-live="polite"></main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
             </li>
           </div>
           <div class="dot-list">
@@ -77,90 +79,22 @@
           </div>
         </div>
       </div>
+=======
+  <section class="role-panel" aria-label="Role selection">
+    <div>
+      <p class="eyebrow">Reporting view</p>
+      <h2 id="roleTitle">Admin Module Access</h2>
+>>>>>>> d3596e2 (`Updated index.html to remove custom styles and replace with external stylesheet and font imports`)
     </div>
-
-    <!-- ===== REPORTS ===== -->
-    <div class="module-row">
-      <div class="module-arrow"><div class="arrow-line"></div></div>
-      <div class="module-box mod-reports">
-        <div class="mod-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/>
-          </svg>
-        </div>
-        Reports
-      </div>
-      <div class="module-connector c-green"><div class="connector-line"></div></div>
-      <div class="submodule-box sub-green">
-        <div class="sub-grid">
-          <!-- Col 1 -->
-          <div>
-            <div class="sub-item">
-              <div class="sub-item-title c-green">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10M7 12h5M7 17h8"/></svg>
-                Top Employers
-              </div>
-              <ul class="sub-bullets">
-                <li>Top 200 Companies</li>
-                <li>Top 200 Job Sectors</li>
-              </ul>
-            </div>
-            <hr class="sub-divider">
-            <div class="sub-item">
-              <div class="sub-item-title c-green">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="19" cy="7" r="3"/><path d="M22 21v-2a3 3 0 0 0-2.12-2.87"/></svg>
-                Employment Reconciliation
-              </div>
-              <ul class="sub-bullets">
-                <li>Tracked vs Total Alumni</li>
-                <li>Employment Date Range</li>
-                <li>With Major</li>
-                <li>Projection</li>
-              </ul>
-            </div>
-            <hr class="sub-divider">
-            <div class="sub-item">
-              <div class="sub-item-title c-green">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                Registrar Matching
-              </div>
-              <ul class="sub-bullets">
-                <li>Unmatched Registrar Records Report</li>
-                <li>Employment History Support Report</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Col 2 -->
-          <div>
-            <div class="sub-item">
-              <div class="sub-item-title c-green">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v10H2V10l10-8 10 8z"/><rect x="9" y="14" width="6" height="6" rx="1"/></svg>
-                Further Studies
-              </div>
-              <ul class="sub-bullets">
-                <li>Pursue Further Education</li>
-              </ul>
-            </div>
-            <hr class="sub-divider">
-            <div class="sub-item">
-              <div class="sub-item-title c-green">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/></svg>
-                Combined Data
-              </div>
-              <ul class="sub-bullets">
-                <li>Graduate Tracer Combined</li>
-              </ul>
-            </div>
-            <hr class="sub-divider">
-            <div class="sub-label-only c-green">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg>
-              Unemployed Alumni
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="role-buttons" role="tablist" aria-label="Select role">
+      <button class="role-button active" type="button" data-role="admin" role="tab" aria-selected="true">Admin</button>
+      <button class="role-button" type="button" data-role="programChair" role="tab" aria-selected="false">Program Chair</button>
+      <button class="role-button" type="button" data-role="externalAffairs" role="tab" aria-selected="false">External Affairs</button>
+      <button class="role-button" type="button" data-role="vcaa" role="tab" aria-selected="false">VCAA</button>
     </div>
+  </section>
 
+<<<<<<< HEAD
     <!-- ===== EMPLOYABILITY REPORT ===== -->
     <div class="module-row">
       <div class="module-arrow"><div class="arrow-line"></div></div>
@@ -473,5 +407,16 @@
 
   </div><!-- /body -->
 </div><!-- /page -->
+=======
+  <section class="column-labels" aria-hidden="true">
+    <span>Modules</span>
+    <span id="submoduleLabel">Submodules / Reports</span>
+  </section>
+
+  <main class="map" id="moduleMap" aria-live="polite"></main>
+</div>
+
+<script src="script.js"></script>
+>>>>>>> d3596e2 (`Updated index.html to remove custom styles and replace with external stylesheet and font imports`)
 </body>
 </html>
