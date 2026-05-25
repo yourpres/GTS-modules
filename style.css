@@ -267,6 +267,12 @@ h2 {
   font-weight: 800;
 }
 
+/* Smaller title for the Employability Report module */
+.module-row.module-employability-report .module-card strong {
+  font-size: 0.95rem;
+  line-height: 1.08;
+}
+
 .sub-card {
   padding: 12px 22px;
   display: grid;

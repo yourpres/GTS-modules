@@ -78,7 +78,7 @@ const roleData = {
         label("Tracked vs not tracked (Undergrad)", "chart")
       ] },
       { name: "Feedback and Suggestions", icon: "feedback", theme: "pink", items: simple(["User Suggestion"], ["light"]) },
-      { name: "Validation", icon: "validation", theme: "gold", items: simple(["Bachelor's Degree", "Master's / Doctorate Degree"], ["degree", "degree"]) },
+      { name: "Validation", icon: "validation", theme: "gold", items: simple(["Bachelor's Degree", "Master's / Doctorate Degree", "Professional Degree"], ["degree", "degree", "briefcase"]) },
       { name: "FAQ", icon: "faq", theme: "purple", items: simple(["Frequently Asked Questions"], ["faq"]) },
       { name: "User Manual", icon: "manual", theme: "green", items: simple(["User Manual / Guide"], ["manual"]) }
     ]
@@ -139,6 +139,10 @@ function icon(name) {
   return appIcons[name] || appIcons.list;
 }
 
+function slugify(text) {
+  return String(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
 function render(roleKey) {
   const role = roleData[roleKey];
   document.getElementById("roleTitle").textContent = role.title;
@@ -147,7 +151,8 @@ function render(roleKey) {
 }
 
 function renderModule(module) {
-  return `<article class="module-row theme-${module.theme}">
+  const cls = `module-${slugify(module.name)}`;
+  return `<article class="module-row theme-${module.theme} ${cls}">
     <div class="rail"><span></span></div>
     <section class="module-card">
       <span class="module-icon">${icon(module.icon)}</span>
