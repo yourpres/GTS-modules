@@ -58,8 +58,7 @@ const roleData = {
       { name: "Maintenance", icon: "maintenance", theme: "navy", items: [
         group("Access and Directory", "users", ["User Role", "Campus", "Alumni Panel", "Social Media"]),
         group("Academic Records", "report", ["College", "Old College", "Program", "Old Program", "Master's / Doctorate Degree", "Professional Degree"]),
-        label("Content", "list"),
-        label("Announcements", "bell")
+        group("Content", "list", ["Announcements"])
       ] },
       { name: "FAQ", icon: "faq", theme: "purple", items: simple(["Frequently Asked Questions"], ["faq"]) }
     ]
