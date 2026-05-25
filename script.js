@@ -1,4 +1,4 @@
-const icons = {
+const appIcons = {
   dashboard: '<svg viewBox="0 0 24 24"><path d="M4 14a8 8 0 0 1 16 0v4H4v-4Z"></path><path d="M12 14l5-6"></path><path d="M6.5 11.5l-2-1"></path><path d="M9 7.2 8 5"></path><path d="M15 7.2 16 5"></path><circle cx="12" cy="14" r="2"></circle></svg>',
   report: '<svg viewBox="0 0 24 24"><path d="M5 3h14v18H5z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg>',
   employ: '<svg viewBox="0 0 24 24"><path d="M4 18 9 13l4 3 7-9"></path><path d="M15 7h5v5"></path><path d="M5 20h3v-6H5z"></path><path d="M11 20h3v-8h-3z"></path><path d="M17 20h3V9h-3z"></path></svg>',
@@ -136,7 +136,7 @@ function group(title, icon, lines) {
 }
 
 function icon(name) {
-  return icons[name] || icons.list;
+  return appIcons[name] || appIcons.list;
 }
 
 function render(roleKey) {
