@@ -67,17 +67,17 @@ const roleData = {
     title: "Program Chair Module Access",
     subLabel: "Submodules",
     modules: [
-      { name: "Dashboard", icon: "dashboard", theme: "blue", items: simple(["All", "Bachelor's Degree"], ["pie", "degree"]) },
+      { name: "Dashboard", icon: "dashboard", theme: "blue", items: simple(["All", "Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)", "Professional Degree (PB COL and COM)"], ["pie", "degree", "degree", "briefcase"]) },
       { name: "Data List", icon: "data", theme: "orange", items: [
         group("Graduate Tracer Records", "users", ["Alumni Tracked List"]),
-        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)"]),
+        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)", "Professional Degree (PB COL and COM)"]),
         group("Registrar Records", "clipboard", ["Registrar Data"]),
         label("Alumni Reference", "id"),
         label("Tracked vs not tracked (All)", "chart"),
         label("Tracked vs not tracked (Undergrad)", "chart")
       ] },
       { name: "Feedback and Suggestions", icon: "feedback", theme: "pink", items: simple(["User Suggestion"], ["light"]) },
-      { name: "Validation", icon: "validation", theme: "gold", items: simple(["Bachelor's Degree", "Master's / Doctorate Degree", "Professional Degree"], ["degree", "degree", "briefcase"]) },
+      { name: "Validation", icon: "validation", theme: "gold", items: simple(["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)", "Professional Degree (PB COL and COM)"], ["degree", "degree", "briefcase"]) },
       { name: "FAQ", icon: "faq", theme: "purple", items: simple(["Frequently Asked Questions"], ["faq"]) },
       { name: "User Manual", icon: "manual", theme: "green", items: simple(["User Manual / Guide"], ["manual"]) }
     ]
@@ -90,7 +90,7 @@ const roleData = {
       { name: "Employability Report", icon: "employ", theme: "purple", items: simple(["Accomplished for all program", "Relevance of Employment", "Employment Sector", "Location of Employment"], ["award", "target", "briefcase", "pin"]) },
       { name: "Data List", icon: "data", theme: "orange", items: [
         group("Graduate Tracer Records", "users", ["Alumni Tracked List"]),
-        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)", "Professional Degree (PB COL and COM)"]),
+        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree", "Professional Degree"]),
         group("Registrar Records", "clipboard", ["Registrar Data"]),
         label("Alumni Reference", "id"),
         label("Tracked vs not tracked (All)", "chart"),
@@ -193,4 +193,5 @@ document.querySelectorAll(".role-button").forEach(button => {
   });
 });
 
-render("admin");
+// show program chair view by default to match provided design
+render("programChair");
