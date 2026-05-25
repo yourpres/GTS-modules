@@ -49,26 +49,31 @@ body {
 .header {
   display: flex;
   align-items: center;
-  gap: 22px;
-  padding: 22px 34px;
+  gap: 20px;
+  padding: 20px 32px;
   color: #fff;
   background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
 }
 
 .header-logo {
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
+  width: 88px;
+  min-width: 88px;
+  height: 88px;
+  border-radius: 0;
   display: grid;
   place-items: center;
-  background: #fff;
-  color: var(--maroon);
+  background: transparent;
+  padding: 0;
   flex: 0 0 auto;
 }
 
-.header-logo svg {
-  width: 58px;
-  height: 58px;
+.header-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 h1, h2, h3, p {
@@ -77,9 +82,9 @@ h1, h2, h3, p {
 
 h1 {
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  line-height: 1;
-  letter-spacing: 1px;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   font-weight: 800;
 }
@@ -267,9 +272,9 @@ h2 {
   font-weight: 800;
 }
 
-/* Smaller title for the Employability Report module */
+
 .module-row.module-employability-report .module-card strong {
-  font-size: 0.95rem;
+  font-size: 1.6rem;
   line-height: 1.08;
 }
 
@@ -392,9 +397,9 @@ h2 {
     height: 54px;
   }
 
-  .header-logo svg {
-    width: 48px;
-    height: 48px;
+  .header-logo img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .role-panel {

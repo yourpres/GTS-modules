@@ -71,7 +71,7 @@ const roleData = {
       { name: "Dashboard", icon: "dashboard", theme: "blue", items: simple(["All", "Bachelor's Degree"], ["pie", "degree"]) },
       { name: "Data List", icon: "data", theme: "orange", items: [
         group("Graduate Tracer Records", "users", ["Alumni Tracked List"]),
-        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree"]),
+        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)"]),
         group("Registrar Records", "clipboard", ["Registrar Data"]),
         label("Alumni Reference", "id"),
         label("Tracked vs not tracked (All)", "chart"),
@@ -91,7 +91,7 @@ const roleData = {
       { name: "Employability Report", icon: "employ", theme: "purple", items: simple(["Accomplished for all program", "Relevance of Employment", "Employment Sector", "Location of Employment"], ["award", "target", "briefcase", "pin"]) },
       { name: "Data List", icon: "data", theme: "orange", items: [
         group("Graduate Tracer Records", "users", ["Alumni Tracked List"]),
-        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree", "Professional Degree"]),
+        group("Degree Records", "degree", ["Bachelor's Degree", "Master's / Doctorate Degree (PB and Alangilan)", "Professional Degree (PB COL and COM)"]),
         group("Registrar Records", "clipboard", ["Registrar Data"]),
         label("Alumni Reference", "id"),
         label("Tracked vs not tracked (All)", "chart"),
