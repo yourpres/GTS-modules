@@ -115,6 +115,13 @@ h2 {
   font-weight: 800;
 }
 
+.role-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .role-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -143,6 +150,38 @@ h2 {
   background: var(--maroon);
   border-color: var(--maroon);
   color: #fff;
+}
+
+.download-button {
+  width: 42px;
+  height: 42px;
+  min-height: 42px;
+  border: 1px solid var(--maroon);
+  border-radius: 8px;
+  background: var(--maroon);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+  flex-shrink: 0;
+}
+
+.download-button:hover {
+  background: var(--maroon-dark);
+  border-color: var(--maroon-dark);
+  transform: translateY(-1px);
+}
+
+.download-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+  transform: none;
+}
+
+.download-button svg {
+  flex-shrink: 0;
 }
 
 .column-labels {
@@ -229,7 +268,7 @@ h2 {
 .module-card, .sub-card {
   border: 1.5px solid currentColor;
   border-radius: 12px;
-  background: color-mix(in srgb, currentColor 8%, white);
+  background: #fff;
   box-shadow: 0 10px 22px rgba(35, 45, 70, 0.05);
 }
 
@@ -272,10 +311,9 @@ h2 {
   font-weight: 800;
 }
 
-
 .module-row.module-employability-report .module-card strong {
-  font-size: 1.6rem;
-  line-height: 1.08;
+  font-size: 1.4rem;
+  line-height: 1.1;
 }
 
 .sub-card {
@@ -292,7 +330,7 @@ h2 {
   gap: 14px;
   align-items: start;
   padding: 12px 0;
-  border-bottom: 1px dashed color-mix(in srgb, currentColor 38%, transparent);
+  border-bottom: 1px dashed rgba(95, 102, 119, 0.38);
 }
 
 .sub-item:nth-last-child(1), .sub-item:nth-last-child(2):nth-child(odd) {
@@ -344,42 +382,123 @@ h2 {
   margin: 2px 0;
 }
 
-.theme-blue {
-  color: var(--blue);
+.theme-blue { color: var(--blue); }
+.theme-green { color: var(--green); }
+.theme-purple { color: var(--purple); }
+.theme-orange { color: var(--orange); }
+.theme-pink { color: var(--pink); }
+.theme-gold { color: var(--gold); }
+.theme-teal { color: var(--teal); }
+.theme-navy { color: var(--navy); }
+
+.role-programChair .column-labels {
+  grid-template-columns: minmax(250px, 0.9fr) minmax(360px, 1.5fr);
 }
 
-.theme-green {
-  color: var(--green);
+.role-programChair .module-row {
+  grid-template-columns: 62px minmax(250px, 0.9fr) 58px minmax(360px, 1.5fr);
 }
 
-.theme-purple {
-  color: var(--purple);
+.role-programChair .module-row.module-feedback-and-suggestions .module-card strong {
+  font-size: clamp(0.95rem, 1.5vw, 1.3rem);
 }
 
-.theme-orange {
-  color: var(--orange);
+.role-programChair .module-row.module-dashboard .module-card strong {
+  font-size: clamp(1.5rem, 1.5vw, 1.5rem);
 }
 
-.theme-pink {
-  color: var(--pink);
+.role-programChair .sub-card {
+  padding: 16px 22px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-.theme-gold {
-  color: var(--gold);
+.role-programChair .sub-item {
+  align-items: center;
+  padding: 14px 0;
 }
 
-.theme-teal {
-  color: var(--teal);
+.role-programChair .sub-item:nth-last-child(2):nth-child(odd) {
+  border-bottom: 1px dashed rgba(95, 102, 119, 0.38);
 }
 
-.theme-navy {
-  color: var(--navy);
+.role-programChair .sub-item li {
+  color: currentColor;
 }
 
-@supports not (background: color-mix(in srgb, red 10%, white)) {
-  .module-card, .sub-card {
-    background: #fff;
-  }
+.role-programChair .sub-item li strong {
+  white-space: nowrap;
+}
+
+.pdf-exporting .page {
+  box-shadow: none;
+}
+
+.pdf-exporting .role-actions {
+  display: none;
+}
+
+.pdf-exporting .module-row {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.pdf-export-wrapper {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 1120px;
+  background: #fff;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pdf-export-wrapper .pdf-export-page {
+  width: 1120px;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pdf-export-wrapper .pdf-role-header {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.pdf-export-wrapper .role-actions {
+  display: none;
+}
+
+.print-frame {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 1120px;
+  height: 800px;
+  border: 0;
+}
+
+.print-export-body {
+  background: #fff;
+  padding: 0;
+}
+
+.print-export-body .pdf-export-page {
+  width: 1120px;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.print-export-body .pdf-role-header {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
 }
 
 @media (max-width: 860px) {
@@ -408,6 +527,11 @@ h2 {
     padding: 18px;
   }
 
+  .role-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
   .role-buttons {
     width: 100%;
     justify-content: stretch;
@@ -415,6 +539,11 @@ h2 {
 
   .role-button {
     flex: 1 1 140px;
+  }
+
+  .download-button {
+    width: 100%;
+    justify-content: center;
   }
 
   .column-labels {
@@ -452,11 +581,16 @@ h2 {
   }
 
   .sub-item:nth-last-child(2):nth-child(odd) {
-    border-bottom: 1px dashed color-mix(in srgb, currentColor 38%, transparent);
+    border-bottom: 1px dashed rgba(95, 102, 119, 0.38);
   }
 }
 
 @media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
   body {
     background: #fff;
     padding: 0;
@@ -473,5 +607,161 @@ h2 {
 
   .module-row {
     break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-export-body .pdf-export-page {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .print-export-body .column-labels {
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 28px 8px;
+  }
+
+  .print-export-body .column-labels span {
+    min-width: 0;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .print-export-body .map {
+    gap: 12px;
+    padding: 14px 28px 24px;
+  }
+
+  .print-export-body .map::before,
+  .print-export-body .rail,
+  .print-export-body .connector {
+    display: none;
+  }
+
+  .print-export-body .module-row,
+  .print-export-body .role-programChair .module-row {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
+    min-height: 0;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .print-export-body .module-card {
+    min-height: 0;
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .print-export-body .module-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .print-export-body .module-card strong,
+  .print-export-body .role-programChair .module-row.module-dashboard .module-card strong,
+  .print-export-body .role-programChair .module-row.module-feedback-and-suggestions .module-card strong {
+    min-width: 0;
+    font-size: 1.1rem;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .print-export-body .module-row.module-employability-report .module-card {
+    gap: 10px;
+    padding-inline: 14px;
+  }
+
+  .print-export-body .module-row.module-employability-report .module-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .print-export-body .module-row.module-employability-report .module-card strong {
+    font-size: 0.94rem;
+    line-height: 1.05;
+  }
+
+  .print-export-body .sub-card,
+  .print-export-body .role-programChair .sub-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 10px 16px;
+  }
+
+  .print-export-body .sub-item,
+  .print-export-body .role-programChair .sub-item {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .print-export-body .sub-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .print-export-body .sub-item h3 {
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+  .print-export-body .sub-item ul {
+    margin-top: 4px;
+    padding-left: 16px;
+  }
+
+  .print-export-body .sub-item li {
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .print-export-body .role-programChair .module-row.module-dashboard .sub-card,
+  .print-export-body .role-programChair .module-row.module-validation .sub-card {
+    grid-template-columns: 1fr;
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list .sub-card {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 12px;
+    padding: 8px 14px;
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list .sub-item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 8px;
+    padding: 6px 0;
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list .sub-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list .sub-item h3 {
+    font-size: 0.78rem;
+  }
+
+  .print-export-body .role-admin .module-row.module-data-list .sub-item li {
+    font-size: 0.72rem;
+  }
+
+  .print-export-body .pdf-role-header {
+    display: block;
+    width: 100%;
+    height: auto;
+    page-break-after: avoid;
+  }
+
+  .print-export-body .column-labels {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 }

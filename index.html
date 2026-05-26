@@ -13,20 +13,30 @@
 <div class="page">
   <header class="header">
     <div class="header-logo" aria-hidden="true">
-      <img src="Batangas_State_Logo.png" alt="Batangas State University logo">
+      <img src="src/Batangas_State_Logo.png" alt="Batangas State University logo">
     </div>
     <h1>Red Spartan Graduate Tracer</h1>
   </header>
+  
   <section class="role-panel" aria-label="Role selection">
     <div>
       <p class="eyebrow">Reporting view</p>
       <h2 id="roleTitle">Program Chair Module Access</h2>
     </div>
-    <div class="role-buttons" role="tablist" aria-label="Select role">
-      <button class="role-button" type="button" data-role="admin" role="tab" aria-selected="false">Admin</button>
-      <button class="role-button active" type="button" data-role="programChair" role="tab" aria-selected="true">Program Chair</button>
-      <button class="role-button" type="button" data-role="externalAffairs" role="tab" aria-selected="false">External Affairs</button>
-      <button class="role-button" type="button" data-role="vcaa" role="tab" aria-selected="false">VCAA</button>
+    <div class="role-actions">
+      <div class="role-buttons" role="tablist" aria-label="Select role" data-html2canvas-ignore="true">
+        <button class="role-button" type="button" data-role="admin" role="tab" aria-selected="false">Admin</button>
+        <button class="role-button active" type="button" data-role="programChair" role="tab" aria-selected="true">Program Chair</button>
+        <button class="role-button" type="button" data-role="externalAffairs" role="tab" aria-selected="false">External Affairs</button>
+        <button class="role-button" type="button" data-role="vcaa" role="tab" aria-selected="false">VCAA</button>
+      </div>
+      <button class="download-button" type="button" id="downloadPdfBtn" data-html2canvas-ignore="true" aria-label="Download PDF">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
     </div>
   </section>
 
